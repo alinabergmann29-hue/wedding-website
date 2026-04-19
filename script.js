@@ -25,6 +25,11 @@
     if (toggle) {
       toggle.textContent = lang === 'de' ? 'EN' : 'DE';
     }
+
+    document.querySelectorAll('.form-link').forEach(el => {
+      const href = el.getAttribute('data-href-' + lang);
+      if (href) el.href = href;
+    });
   }
 
   document.getElementById('lang-toggle').addEventListener('click', function() {
